@@ -102,6 +102,18 @@ namespace ConsoloApp
             }
         }
 
+
+        //Nullable numerics
+        //why do we NOT need to fully implement a nullable numeric?
+        //numerics have a default of zero
+        //numerics can only store a numeric value (unless nullable)
+        //numerics can be null if declared as nullable
+        //the only 2 possibilities for a nullable numeric is a number or null
+        //if the numeric has additional criteria then you can code the property as a Fully Implemented property
+
+        // int? means it doesnt have to require a value, it could be null
+        //Opposite, just int means we need to assign it a value
+        public int? Numberic { get; set; }
         //  ---Constructors---
 
         //Behaviors (methods)
