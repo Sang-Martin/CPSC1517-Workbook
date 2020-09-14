@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoloApp
 {
-    class Window
+    public class Window
     {
     }
 }
