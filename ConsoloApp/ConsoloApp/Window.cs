@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,13 +16,17 @@ namespace ConsoloApp
     // for the class to be used by an outside user (program) is must be public
     public class Window
     {
+        //  ---Class---
         //the class can have data that is open to the user by defining it as a public datatype
         //the class can have data(local variable) that is restricted from the user by defining it as a private datatype
         //the class can create a Proterty that can by used to interface between the user and the private data member
         //this interface is a public Property
 
+        //  ---Properties---
+
         //private data menber
         private string _Manufacturer;
+        private decimal _Height;
 
         //  optional
         //  Properties can be implemented in two ways
@@ -70,10 +75,34 @@ namespace ConsoloApp
 
         //      b) Auto Implemented Property
         //          used when there is no need for additional code/logic, when the date is simply saved(stored)
+        //          No internal private DATA MEMBER IS REQUIRED for this property
+        //          the system will internally generate a data area for the data accessing this stored data (getting 
 
-        //Properties
+        public decimal Width { get; set; }
 
-        //Constructors
+
+        //what if, thedata coming in is invalid?
+        //will there be additional logic/code need? YES
+        //what property implementation is needed? Fully implemented
+
+        public decimal Height
+        {
+            get { return _Height; }
+            set
+            {
+                //the m on the literal indicates the value is a decimal
+                if(value <= 0.0m)
+                {
+                    throw new Exception("Height can not be 0 or less than 0");
+                }
+                else
+                {
+                    _Height = value;
+                }
+            }
+        }
+
+        //  ---Constructors---
 
         //Behaviors (methods)
     }
