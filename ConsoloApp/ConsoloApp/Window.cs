@@ -172,7 +172,27 @@ namespace ConsoloApp
         }
 
 
+        //  ---Behaviors (methods)---
 
-        //Behaviors (methods)
+        //Area of a window
+        public decimal WindowArea()
+        {
+            //note: in this calculation we are using the property for Height
+            //you could have used the data member for _Height
+            return Height * Width;
+        }
+
+        //Perimeter of a Window
+        public decimal WindowPerimeter()
+        {
+            return 2 * (Height + Width);
+        }
+
+        //Cost of Window
+        public decimal WindowCost(decimal sqlmeterprice)
+        {
+            return sqlmeterprice * WindowArea();
+        }
+
     }
 }

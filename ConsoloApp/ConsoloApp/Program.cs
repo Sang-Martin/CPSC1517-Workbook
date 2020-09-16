@@ -21,6 +21,8 @@ namespace ConsoloApp
 
             //Greedy constructor
             Window myGreedyInstance = new Window(2.75m, 1.9m, 3, "See Thru Holes");
+
+            decimal price = myGreedyInstance.WindowCost(5.75m);
         }
     }
 }
