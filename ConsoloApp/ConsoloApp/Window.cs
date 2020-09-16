@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -111,10 +112,66 @@ namespace ConsoloApp
         //the only 2 possibilities for a nullable numeric is a number or null
         //if the numeric has additional criteria then you can code the property as a Fully Implemented property
 
-        // int? means it doesnt have to require a value, it could be null
+        // int? means it doesnt have to require a value, it could be null (nullable)
         //Opposite, just int means we need to assign it a value
-        public int? Numberic { get; set; }
+        public int? NumberofPanes { get; set; }
+
         //  ---Constructors---
+        //a constructor is "a method" that guarantees the newly created instance of this class will ALWAYS be created in "a known state"
+
+        //+ syntax
+        //public constructorname([ListBindable of parameters])
+        //{
+        //    your code
+        //}
+
+        //the constructorname has the SAME class name
+        //NOTE: there is NO RETURN DATATYPE
+
+        //constructor(s) are called on your behave WHEN an instance of the class is requested by the program
+        //you cannot call a constructor directly like a method.
+
+        //constructor(s) are OPTIONAL
+        //IF a class DOES NOT have a constructor THEN the system will generate the class instance using the datatyep defaults for your private data members and auto implemented properties
+        //this situation of no constructor(s) is often referred to as using a "system"constructor
+
+        //IF you code a constructor, then you MUST code ANY and ALL constructor(s) needed by your class as used in your programming
+
+        // + There are TWO COMMON type of constructor
+        //   ++ Default constructor: takes NO parameters
+        //   ++ Greedy constructor: simulates the "system" constructor
+        //you can if you wish assign value to your class data members/properties that are NOT the system defaults for the datatype
+
+        //Default constructor
+        public Window()
+        {
+            //technically numerics are set to zero when they are declared
+            //logically in this class the numeric fields should NOT be zero
+            //therefor, we will set the numeric fields to a literal not equal to zero
+
+            //one could assign a value directly to a private data member within the class
+            //a preferred method is to use the properties instead
+            //why?  because that property MAY have calidation to ensure an acceptable value exists for the data
+            //      also, auto implemented properties have no direct private data members
+
+            Height = 0.9m;  //assume the widow height is .9 meters
+            Width = 1.2m;
+            NumberofPanes = 1;
+            Manufacturer = null;    //this is optional as a string is default to null anyways
+        }
+
+        //Greedy
+        //takes in a value for each data member/property in the class
+        //each data member/property is assigned the appropriate incoming parameter value
+        public Window(decimal width, decimal height, int? numberofpanes, string manufacturer)
+        {
+            Width = width;
+            Height = height;
+            NumberofPanes = numberofpanes;
+            Manufacturer = manufacturer;
+        }
+
+
 
         //Behaviors (methods)
     }
