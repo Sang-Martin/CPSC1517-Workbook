@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoloApp
 {
-    class Wall
+    public class Wall
     {
         // height, width
 
@@ -54,7 +54,7 @@ namespace ConsoloApp
         public Wall(decimal height, decimal width)
         {
             Height = height;
-            width = width;
+            Width = width;
         }
 
         //Area of a Wall

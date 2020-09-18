@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoloApp
 {
-    class Door
+    public class Door
     {
         //height, width, material (nullable), right or left swing door
 
@@ -24,7 +24,6 @@ namespace ConsoloApp
         private decimal _Width;
         private string _Material;
         private string _RightOrLeft;
-
 
         public decimal Height
         {
