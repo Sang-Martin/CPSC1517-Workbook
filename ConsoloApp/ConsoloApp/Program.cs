@@ -96,8 +96,55 @@ namespace ConsoloApp
             window = new Window(1.3m, 1.3m, 2, "Fancy Window");
             windows.Add(window);
 
-            //store all room components in an instance of room
 
+            #region store all room components in an instance of room
+
+            //store all room components in an instance of room
+            room.Name = "Master Bedroom";
+            room.Walls = walls;
+            room.Windows = windows;
+            room.Doors = doors;
+
+            #endregion
+
+
+            //calculate the number of cans of paint needed for the room
+            //assume a can of paint covers 27.87 sq m
+            //determine the area of wall surface to paint
+            //total area of walls 
+            //total area of windows
+            //total area of doors
+            //paintable surface = wallarea (windowarea + doorarea)
+            //cans = paintable surface / 27.87m
+
+            decimal wallarea = 0.0m;
+            foreach (Wall item in room.Walls)
+            {
+                wallarea += item.WallArea();
+            }
+
+            decimal doorarea = 0.0m;
+            foreach (Door item in doors)
+            {
+                doorarea += item.DoorArea();
+            }
+
+            decimal windowarea = 0.0m;
+            //var is a datatype
+            //var is resolved at execution time, while others(int, string,...) resolved at the COMPLIED TIME
+            //the resolved datatype remains as the resolved datatype until the variable is terminated
+            foreach (var item in windows)
+            {
+                windowarea += item.WindowArea();
+            }
+
+            decimal cans = (wallarea - windowarea - doorarea) / 27.87m;
+
+            //output
+            Console.WriteLine($"Wallarea is:\t\t{wallarea:0.00}");
+            Console.WriteLine($"Door area is:\t\t{doorarea:0.00}");
+            Console.WriteLine($"Window area is:\t\t{windowarea:0.00}");
+            Console.WriteLine($"Required number of paint cans is:\t{cans:0.00}");
 
         }
     }

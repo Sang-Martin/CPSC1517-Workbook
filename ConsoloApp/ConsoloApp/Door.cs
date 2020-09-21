@@ -87,13 +87,13 @@ namespace ConsoloApp
         }
 
         //Area of a Door
-        public decimal WindowArea()
+        public decimal DoorArea()
         {
             return Height * Width;
         }
 
         //Perimeter of a Window
-        public decimal WindowPerimeter()
+        public decimal DoorPerimeter()
         {
             return 2 * (Height + Width);
         }

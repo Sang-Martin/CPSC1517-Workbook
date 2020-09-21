@@ -58,7 +58,7 @@ namespace ConsoloApp
         }
 
         //Area of a Wall
-        public decimal WindowArea()
+        public decimal WallArea()
         {
             return Height * Width;
         }
