@@ -1,0 +1,43 @@
+﻿
+@{
+    //the Layout ties this Content Page to the desired Layout structure page
+    Layout = "~/_Layout.cshtml";
+    Page.Title = "Test";
+}
+
+@{
+    var total = 0;
+    var totalMessage = "";
+    if (IsPost)
+    {
+
+        var num1 = Request["value1"];
+        var num2 = Request["value2"];
+
+        total = num1.AsInt() + num2.AsInt();
+        totalMessage = "Total: " + total;
+    }
+
+}
+
+
+<div>
+    <form action="" method="post">
+        <table>
+            <tr>Enter two number, then click <strong>Add</strong></tr>
+            <tr>
+                <td><label for="value1">First Number: </label></td>
+                <td><input type="text" name="value1" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="value2">Second Number: </label>
+                </td>
+                <td><input type="text" name="value2" /></td>
+            </tr>
+            <tr><td><input type="submit" value="Add" /></td></tr>
+        </table>
+    </form>
+    <p>@totalMessage</p>
+</div>
+

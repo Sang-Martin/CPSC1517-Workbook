@@ -5,11 +5,29 @@
 }
 
 @* you can add HTML in both files (HelloWorld.cshtml and _Layout.cshtml)
-    *@
+*@
 
-<h1>Hello World</h1>
+@section banner
+{
+    <div style="color:aqua;">
 
+        This area would be for banner stuff on my web page
+        <h1>Hello World</h1>
+    </div>
+}
 
+@* anything NOT explicitly in a section will be place in RenderBody *@
+<div>
+
+    <blockquote>
+        This is my first Layout/Content page
+    </blockquote>
+    <p>
+        We are starting to learn about Forms and Razor web pages.
+        The Layout page contains the structure layour of the web page. The Content
+        pae contains the content that appears in the &ltBody&gt tag.
+    </p>
+</div>
 
 @section foot {
     &copy; CPSC1517 Nait Sep 2020

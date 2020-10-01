@@ -8,56 +8,20 @@
     <script src="~/Scripts/bootstrap.js"></script>
     @* follow these links and scripts with any of your own custom css files *@
     @*  <link href="~/Content/stylesheet.css" rel="stylesheet" /> *@
-
+    <link href="~/Content/CustomStyles.css" rel="stylesheet"/>
     @* Leave the RenderSection as your last item as this area can be sent on a individual web*@
     @RenderSection("head", required: false)
 </head>
 <body>
 
-    <div class="container">
-        <div class="navbar navbar-inverse">
-            <nav class="navbar navbar-expand-md navbar-light fixed-top">
-                @* href="HelloWorld.cshtml" *@
-                <a class="navbar-brand" href="~/HelloWorld.cshtml">
-                    <strong>Forms and Razor</strong>
-                </a>
-                <button class="navbar-toggler" type="button"
-                        data-toggle="collapse" data-target="#navbarMenuName"
-                        aria-controls="navbarMenuName" aria-expanded="false"
-                        aria-label="Toggle Navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarMenuName">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="~/HelloWorld.cshtml"
-                               style="color:black">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#"
-                               id="navbarSubMenu" data-toggle="dropdown"
-                               style="color:black"
-                               aria-haspopup="true" aria-expanded="false">
-                                Samples
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarSubMenu">
-                                <a class="dropdown-item"
-                                   href="~/SamplePages/TextBox.cshtml"
-                                   style="color:black">
-                                    TextBoxes and Buttons
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+    @* Menu for the web appication *@
+    @RenderPage("_Menu.cshtml");
+
+    <br /><br />
+    <div class="jumbotron">
+        @RenderSection("banner", required: true)
     </div>
 
-    <br />
-    <br />
-
-    @RenderSection("banner", required: false)
     @RenderBody()
     @RenderSection("foot", required: false)
 </body>
