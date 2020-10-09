@@ -49,6 +49,12 @@
         {
             @*<p style="color:firebrick">Category selection has @resutls.Count() products</p>*@
             //pass the category id to another page to display the list of product
+            //syntax
+            //  pagename.ext?label = value&label2=value2...
+            //pagename.ext is the page
+            //? indicates parameter(s) to follow
+            //parameter: label value
+            // & separates multiple parameters
             Response.Redirect("WebGridDemo.cshtml?cid=" + categoryselection);
         }
     }
