@@ -4,3 +4,9 @@
     background-color: #e9ecef;
     border-radius: 0.3rem;
 }
+
+input,
+select {
+    margin: 2px 0;
+}
+
