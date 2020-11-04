@@ -18,9 +18,9 @@
             <asp:TextBox ID="Phone" runat="server"></asp:TextBox><br />
             <asp:Label ID="Label4" runat="server" Text="Full or Part-time:"></asp:Label>&nbsp;
             <%--<asp:TextBox ID="FullOrPartTime" runat="server"></asp:TextBox><br />--%>
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
-                <asp:ListItem Value="0">&nbsp;Full</asp:ListItem>
-                <asp:ListItem Value="1">&nbsp;Part-time</asp:ListItem>
+            <asp:RadioButtonList ID="FullOrPartTime" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                <asp:ListItem Value="1">&nbsp;Full</asp:ListItem>
+                <asp:ListItem Value="2">&nbsp;Part-time</asp:ListItem>
             </asp:RadioButtonList>
             <br />
             <div class="row">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-8">
                     <%--<asp:TextBox ID="JobList" runat="server"></asp:TextBox>--%>
-                    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                    <asp:CheckBoxList ID="JobLists" runat="server">
                         <asp:ListItem>&nbsp;Sales</asp:ListItem>
                         <asp:ListItem>&nbsp;Manufacturing</asp:ListItem>
                         <asp:ListItem>&nbsp;Accouting</asp:ListItem>
@@ -39,8 +39,8 @@
             </div>
         </div>
         <div class="col-6">
-            <asp:Button ID="Submit" runat="server" Text="Submit" CssClass="btn btn-primary"/>&nbsp;&nbsp;
-            <asp:Button ID="Clear" runat="server" Text="Clear" CssClass="btn btn-light"/><br /><br />
+            <asp:Button ID="Submit" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="Submit_Click"/>&nbsp;&nbsp;
+            <asp:Button ID="Clear" runat="server" Text="Clear" CssClass="btn btn-light" OnClick="Clear_Click"/><br /><br />
             <asp:Label ID="MessageLabel" runat="server" ></asp:Label>
         </div>
     </div>
