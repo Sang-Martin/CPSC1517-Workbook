@@ -15,6 +15,7 @@
 		  <!-- any siteMapNodes inside of a set of open/close siteMapNodes belong to that submenu-->
 		  <siteMapNode url="~/SamplePages/CommonControls.aspx" title="Common Controls"  description="a submenu item" />
 		  <siteMapNode url="~/SamplePages/JobApp.aspx" title="Job Application"  description="a submenu item" />
+		  <siteMapNode url="~/SamplePages/ContestEntry.aspx" title="Contest Entry"  description="a submenu item" />
 	  </siteMapNode>
 	  
 	  <siteMapNode url="~/Contact.aspx" title="Contact"  description="" />

@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="Job Application" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="JobApp.aspx.cs" Inherits="WebApp.SamplePages.JobApp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Job Application</h1>
-    <div class="row">
-        <div class="offset-1 col-10">
+    <div class="row col-md-12">
+        <div class="alert alert-info">
             <blockquote class="alert alert-info" style="font-style:italic">
                 This page will illustrate some simple controls use to full out an online job application. The form will use basic 2 column bootstrap formatting. The form investigates the use of the CheckBoxList. Data display will be s simple string.
             </blockquote>
