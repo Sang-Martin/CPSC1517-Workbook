@@ -52,10 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD:CSNet - Copy/NorthWindSystem/NorthWindSystem.csproj
     <Compile Include="DAL\NorthWindSystemContext.cs" />
     <Compile Include="BLL\RegionController.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Region.cs" />
+=======
+    <Compile Include="Class1.cs" />
+    <Compile Include="DAL\dummy.cs" />
+    <Compile Include="BLL\dummy.cs" />
+    <Compile Include="Entities\dummy.cs" />
+>>>>>>> parent of 04fba46... Annotations:CSNet/NorthWindSystem/NorthWindSystem.csproj
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
