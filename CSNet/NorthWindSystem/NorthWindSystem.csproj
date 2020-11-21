@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5203F63-5130-4B85-BD2D-4415D71C3550}</ProjectGuid>
+    <ProjectGuid>{2B431337-C4E0-47C1-90C3-70A3EB8CD792}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NorthWindSystem</RootNamespace>
-    <AssemblyName>NorthWindSystem</AssemblyName>
+    <RootNamespace>NorthwindSystem</RootNamespace>
+    <AssemblyName>NorthwindSystem</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -52,22 +52,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD:CSNet - Copy/NorthWindSystem/NorthWindSystem.csproj
-    <Compile Include="DAL\NorthWindSystemContext.cs" />
     <Compile Include="BLL\RegionController.cs" />
+    <Compile Include="DAL\NorthwindSystemContext.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Region.cs" />
-=======
-    <Compile Include="Class1.cs" />
-    <Compile Include="DAL\dummy.cs" />
-    <Compile Include="BLL\dummy.cs" />
-    <Compile Include="Entities\dummy.cs" />
->>>>>>> parent of 04fba46... Annotations:CSNet/NorthWindSystem/NorthWindSystem.csproj
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
