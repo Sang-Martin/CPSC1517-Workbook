@@ -68,13 +68,13 @@ namespace WebApp.SamplePages
                 //this information is assigned to the DDL control by use of property name in your collection
 
                 //2 styles
-                //  a) physical string of the field name
+                //  1) physical string of the field name
                 CollectionList.DataValueField = "ValueId";
 
-                //  b) OOP style coding (recommend)
+                //  2) OOP style coding (RECOMMEND)
                 CollectionList.DataTextField = nameof(DDLData.DisplayText);
 
-                //  c) bind your data source to your control
+                //c) bind your data source to your control
                 CollectionList.DataBind();
 
                 // d) optionally: add a prompt line to your dropdownlist

@@ -13,6 +13,7 @@
 		<siteMapNode url="" title="Sample" description="the top of a submenu">
 			<!-- any siteMapNodes inside of a set of open/close siteMapNodes belong to that submenu-->
 			<siteMapNode url="~/SamplePages/TestPage.aspx" title="Test Page"  description="a submenu item" />
+			<siteMapNode url="~/SamplePages/SimpleQuery.aspx" title="Simple Query"  description="a submenu item" />
 
 		</siteMapNode>
 

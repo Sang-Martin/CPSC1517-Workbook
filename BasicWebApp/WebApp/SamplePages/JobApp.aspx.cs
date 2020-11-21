@@ -15,16 +15,23 @@ namespace WebApp.SamplePages
             MessageLabel.Text = "";
         }
 
+
         protected void Submit_Click(object sender, EventArgs e)
         {
             //not worry about validation in this example
+            #region Label
             string msg = "";
             msg += "Name: " + FullName.Text;
             msg += "\nEmail: " + EmailAddress.Text;
             msg += "\nPhone: " + Phone.Text;
+            #endregion
+
+            #region RadioButton
             // ALWAYS condiser usually the .SelectedValue over .SelectedIndex
             msg += "\nTime: " + (FullOrPartTime.SelectedValue == "1" ? "Full Time" : (FullOrPartTime.SelectedValue == "2" ? "Part Time" : "Either"));
+            #endregion
 
+            #region CheckList
             //handle the CheckBoxList
             //traverse the checkbox list, review one item
             //  at at time and add those items selected to the message
@@ -53,6 +60,7 @@ namespace WebApp.SamplePages
             }
 
             MessageLabel.Text = msg;
+            #endregion
         }
 
         protected void Clear_Click(object sender, EventArgs e)
@@ -69,5 +77,6 @@ namespace WebApp.SamplePages
             JobLists.ClearSelection();
 
         }
+
     }
 }

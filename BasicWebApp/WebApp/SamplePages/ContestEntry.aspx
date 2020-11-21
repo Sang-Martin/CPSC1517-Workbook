@@ -49,7 +49,7 @@
     </asp:RequiredFieldValidator>
 
     <%-- Regular Expression --%>
-    <asp:RegularExpressionValidator ID="RegExPostalCode" runat="server" ErrorMessage="Postal Code is is invalid (T6T6T6)" SetFocusOnError="true"
+    <asp:RegularExpressionValidator ID="RegExPostalCode" runat="server" ErrorMessage="Postal Code is in invalid (T6T6T6)" SetFocusOnError="true"
         ForeColor="Firebrick" Display="None" ControlToValidate="PostalCode" ValidationExpression="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]">
     </asp:RegularExpressionValidator>
 
@@ -58,6 +58,7 @@
         ForeColor="Firebrick" Display="None" ControlToValidate="EmailAddress" ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$">
     </asp:RegularExpressionValidator>
 
+    <%-- Range validation --%>
     <%-- on the form we do NOT have a field suitable to demo the RangeValidator for this example we will use the StreetAddress2 to demo the validator --%>
 
     <%--     <%-- for this validator, use your Type parameter to identify the datatype for the check, default is string --%>
@@ -86,12 +87,12 @@
     <div class="row">
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" HeaderText="Data entry errors. Examine your data to resolve the following concerns:"/>
     </div>
-
+   
     <div class="row">
         <div class ="col-md-6">
             <fieldset class="form-horizontal">
                 <legend>Application Form</legend>
-
+                
                 <asp:Label ID="Label1" runat="server" Text="First Name"
                      AssociatedControlID="FirstName"></asp:Label>
                 <asp:TextBox ID="FirstName" runat="server" 
