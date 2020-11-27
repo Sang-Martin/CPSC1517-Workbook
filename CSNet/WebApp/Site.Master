@@ -14,9 +14,9 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link href="css/font-awesome.css" rel="stylesheet" />
 </head>
-<body>
+<body style="padding-top:0">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -38,7 +38,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-expand-md navbar-light" style="background-color: #c0c0c0;">
+        <div class="navbar navbar-expand-md navbar-light" style="background-color: #0094ff;">
            <a class="navbar-brand" runat="server" href="~/"><strong>CPSC1517-A03</strong></a>
            <button class="navbar-toggler" type="button" data-toggle="collapse" 
                data-target="#navbarSupportedContent" 
