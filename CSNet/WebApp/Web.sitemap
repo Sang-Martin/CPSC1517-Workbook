@@ -1,17 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="" title=""  description="points to the root menu of your web page">
-	<siteMapNode url="~/Default.aspx" title="Home"  description="optional, serve as a tooltiip to the menu" />
-	<siteMapNode url="" title="Samples"
-				 description="the top of a submenu">
-	  <siteMapNode url="~/SamplePages/TestPage.aspx" title="Test Page"
-				   description="a submenu item" />
-	  <siteMapNode url="~/SamplePages/SimpleQuery.aspx" title="Simple Query"
-				   description="" />
-		<siteMapNode url="~/SamplePages/GridViewCodeBehind.aspx" title="Using GridView"
-			 description="" />
-	</siteMapNode>
-	<siteMapNode url="~/Contact.aspx" title="Contact"  description="" />
-	<siteMapNode url="~/About.aspx" title="About"  description="" />
+    <siteMapNode url="~/Default.aspx" title="Home"  description="optional, serve as a tooltiip to the menu" />
+    <siteMapNode url="" title="Samples"
+                 description="the top of a submenu">
+      <siteMapNode url="~/SamplePages/TestPage.aspx" title="Test Page"
+                   description="a submenu item" />
+      <siteMapNode url="~/SamplePages/SimpleQuery.aspx" title="Simple Query"
+                   description="" />
+      <siteMapNode url="~/SamplePages/GridViewCodeBehind.aspx" title="Using GridView"
+                   description="" />
+      <siteMapNode url="~/SamplePages/SearchingUsingODS.aspx" title="Using ODS for Search"
+                   description="" />
+    </siteMapNode>
+    <siteMapNode url="~/Contact.aspx" title="Contact"  description="" />
+    <siteMapNode url="~/About.aspx" title="About"  description="" />
   </siteMapNode>
 </siteMap>

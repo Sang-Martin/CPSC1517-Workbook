@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Using GridView" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GridViewCodeBehind.aspx.cs" Inherits="WebApp.SamplePages.GridViewCodeBehind" %>
+﻿<%@ Page Title="ODS Search" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SearchingUsingODS.aspx.cs" Inherits="WebApp.SamplePages.SearchingUsingODS" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="jumbotron">
@@ -11,12 +11,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-7">
+       <%-- <asp:RequiredFieldValidator ID="RequiredProductArg" runat="server" 
+            ErrorMessage="Enter a product name (or portion of)"
+            Display="None" SetFocusOnError="true" ForeColor="Firebrick"
+             ControlToValidate="ProductArg">
+
+        </asp:RequiredFieldValidator>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />--%>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
             <asp:Label ID="Label1" runat="server" Text="Enter a product name:"></asp:Label>
             &nbsp;&nbsp;
             <asp:TextBox ID="ProductArg" runat="server"></asp:TextBox>
             &nbsp;&nbsp;
-            <asp:LinkButton ID="SearchProduct" runat="server" OnClick="SearchProduct_Click">
+            <asp:LinkButton ID="SearchProduct" runat="server" OnClick="SearchProduct_Click" >
                 <i class="fa fa-search"></i>Search Product?</asp:LinkButton>
             &nbsp;&nbsp;
             <asp:LinkButton ID="Clear" runat="server" OnClick="Clear_Click"
@@ -27,9 +36,9 @@
             <br />
             <asp:GridView ID="ProductList" runat="server"
                 CssClass="table table-striped" GridLines="Horizontal"
-                BorderStyle="None" AutoGenerateColumns="False" 
+                BorderStyle="None" AutoGenerateColumns="False"
                 OnSelectedIndexChanged="ProductList_SelectedIndexChanged" 
-                AllowPaging="True" PageSize="4" OnPageIndexChanging="ProductList_PageIndexChanging">
+                DataSourceID="ProductListODS" AllowPaging="True" PageSize="4">
 
                 <Columns>
                     <asp:CommandField CausesValidation="False" SelectText="View" 
@@ -42,6 +51,16 @@
                                 Text='<%# Eval("ProductName") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Left"></ItemStyle>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Cat.">
+                        <ItemTemplate>
+                            <asp:DropDownList ID="CategoryList" runat="server" 
+                                DataSourceID="CategoryListODS" 
+                                DataTextField="CategoryName" 
+                                DataValueField="CategoryID"
+                                selectedvalue='<%# Eval("CategoryID") %>' >
+                            </asp:DropDownList>
+                        </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Price ($)">
                         <ItemTemplate>
@@ -58,12 +77,14 @@
                         <ItemStyle HorizontalAlign="Right"></ItemStyle>
                     </asp:TemplateField>
                 </Columns>
-                <PagerSettings FirstPageText="Start" LastPageText="End" 
-                    Mode="NumericFirstLast" NextPageText="..." PageButtonCount="5" 
-                    PreviousPageText="..." />
+                <EmptyDataTemplate>
+                    No data to display
+                </EmptyDataTemplate>
+                <PagerSettings FirstPageText="Start" LastPageText="End" Mode="NumericFirstLast" NextPageText="..." PageButtonCount="5" PreviousPageText="..." />
+              
             </asp:GridView>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-3">
             <table>
                 <tr>
                     <td align="right">
@@ -101,4 +122,22 @@
             </table>
         </div>
     </div>
+    <%--ObjectDataSources--%>
+    <asp:ObjectDataSource ID="ProductListODS" runat="server" 
+        OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="Product_GetByPartialProductName" 
+        TypeName="NorthwindSystem.BLL.ProductController">
+
+        <SelectParameters>
+            <asp:ControlParameter ControlID="ProductArg" 
+                PropertyName="Text" DefaultValue="dfgdgff" 
+                Name="productname" Type="String"></asp:ControlParameter>
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="CategoryListODS" runat="server" 
+        OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="Category_ListAll" 
+        TypeName="NorthwindSystem.BLL.CategoryController">
+
+    </asp:ObjectDataSource>
 </asp:Content>

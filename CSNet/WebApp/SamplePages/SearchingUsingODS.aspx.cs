@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +12,7 @@ using NorthwindSystem.Entities;
 
 namespace WebApp.SamplePages
 {
-    public partial class GridViewCodeBehind : System.Web.UI.Page
+    public partial class SearchingUsingODS : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,41 +26,6 @@ namespace WebApp.SamplePages
                 ex = ex.InnerException;
             }
             return ex;
-        }
-
-        protected void SearchProduct_Click(object sender, EventArgs e)
-        {
-            if(string.IsNullOrEmpty(ProductArg.Text))
-            {
-                MessageLabel.Text = "Enter a product name (or portion of) then press search";
-            }
-            else
-            {
-                try
-                {
-                    //standard look up
-                    ProductController sysmgr = new ProductController();
-                    List<Product> info = sysmgr.Product_GetByPartialProductName(ProductArg.Text);
-                    if (info.Count > 0)
-                    {
-                        //put the data on the custom gridview
-                        //the data set has all the columns of the Product table
-                        //the gridview will ONLY use the columns that are requested
-                        ProductList.DataSource = info;
-                        ProductList.DataBind();
-                    }
-                    else
-                    {
-                        MessageLabel.Text = "No products match your search value";
-                        ProductList.DataSource = null;
-                        ProductList.DataBind();
-                    }
-                }
-                catch(Exception ex)
-                {
-                    MessageLabel.Text = GetInnerException(ex).Message;
-                }
-            }
         }
 
         protected void Clear_Click(object sender, EventArgs e)
@@ -94,13 +58,13 @@ namespace WebApp.SamplePages
                 int productid = int.Parse(hiddenfieldvalue);
                 //the last 3 lines could be coded as one
                 //int productid = int.Parse((agvrow.FindControl("ProductID") as HiddenField).Value);
-                
+
 
                 //standard lookup
                 ProductController sysmgr = new ProductController();
                 Product info = sysmgr.Product_FindByID(productid);
                 //a single row test
-                if(info == null)
+                if (info == null)
                 {
                     MessageLabel.Text = "Product not currently on file. Refresh your search";
                     //optionally clear your display
@@ -115,24 +79,18 @@ namespace WebApp.SamplePages
                     Discontinued.Checked = info.Discontinued;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageLabel.Text = GetInnerException(ex).Message;
             }
         }
 
-        protected void ProductList_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void SearchProduct_Click(object sender, EventArgs e)
         {
-            //you must manually alter the current PageIndex on the gridview
-            //the collection along with the PageSize will determine which
-            //   rows of your dataset (colletion) to display
-            //the required page (group of records) is indicated by the pageindex
-            //the selected (new) pageindex is available to you via the
-            //    GridViewPageEventArgs parameter e.NewPageIndex
-            ProductList.PageIndex = e.NewPageIndex;
-
-            //you MUST new refresh your data set (collection)
-            SearchProduct_Click(sender, new EventArgs());
+            if (string.IsNullOrEmpty(ProductArg.Text))
+            {
+                MessageLabel.Text = "Enter a product name (or portion of) then press search";
+            }
         }
     }
 }
